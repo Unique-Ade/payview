@@ -63,7 +63,9 @@ export default function Home() {
             Documentation
           </a>
         </div>
+         <h2 className="bg-brass text-white text-4xl font-mono">THis is amazing</h2>
       </main>
+     
     </div>
   );
 }
