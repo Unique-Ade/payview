@@ -15,8 +15,13 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PayView",
-  description: "View Global Salaries for Tech Careers",
+  title: "PayView — Compare global tech salaries",
+  description: "See how tech salaries compare across countries, built on live job market data from Adzuna.",
+  openGraph: {
+    title: "PayView",
+    description: "Compare tech salaries across global markets.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
