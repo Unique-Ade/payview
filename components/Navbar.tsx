@@ -4,8 +4,8 @@ import Link from "next/link"
 const Navbar = () => {
     return (
         <nav className="flex flex-wrap items-center justify-between border-b border-line py-[22px] px-8">
-            <Link href="" className="logo font-bold text-xl">PayView</Link>
-            <div className="flex items-center gap-4">
+            <Link href="" className="logo font-bold text-xl pb-4 sm:pb-0">PayView</Link>
+            <div className="flex items-center gap-4 flex-wrap">
                 <Link href="" className="compare-link">Compare</Link>
                 <Link href="" className="market-link">Markets</Link>
                 <Link href="" className="method-link">Methodology</Link>

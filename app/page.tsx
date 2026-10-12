@@ -1,4 +1,5 @@
 
+import Hero from "@/components/Hero";
 import { getSalaryHistogram, Histogram, Job, jobRoleComparison, searchJobs } from "@/lib/adzuna";
 
 
@@ -11,6 +12,7 @@ const Home = async () =>{
 
   return (
   <div className="home">
+    <Hero/>
     {
       // Object.entries(jobHistogram.histogram).map((salary)=>(
       //   <div className="each-histogram" key={salary[0]}>
