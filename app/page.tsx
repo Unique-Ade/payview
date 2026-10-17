@@ -1,14 +1,14 @@
 
 import Hero from "@/components/Hero";
-import { getSalaryHistogram, Histogram, Job, jobRoleComparison, searchJobs } from "@/lib/adzuna";
+import { getSalaryHistogram, Histogram, Job, searchJobs } from "@/lib/adzuna";
 
 
 const Home = async () =>{
   const jobs = await searchJobs();
   const jobHistogram = await getSalaryHistogram();
   
-  const jobComparisonByRegion = await jobRoleComparison(); 
-  console.log(jobComparisonByRegion)
+  // const jobComparisonByRegion = await jobRoleComparison(); 
+  // console.log(jobComparisonByRegion)
 
   return (
   <div className="home">

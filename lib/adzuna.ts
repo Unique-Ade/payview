@@ -90,20 +90,24 @@ export const getSalaryHistogram = async(country: string = "gb", what: string = "
 }
 
 
+
+
 interface CountryComparison {
   jobCountry : string;
   data: JobSearchResults;
 }
 //Job Comparison Function
-export const jobRoleComparison = async():Promise<CountryComparison[]>=>{
-      const jobComparisons = await Promise.all([searchJobs("us","frontend developer") ,searchJobs("de","frontend developer"),
-                                   searchJobs("gb","frontend developer"), searchJobs("za","frontend developer")]);
+// export const jobRoleComparison = async(role: string, markets: string[]):Promise<CountryComparison[]>=>{
+       
+//        const jobMarkets: string[] = ["us", "de", "gb", "za"];
+//        const jobComparisons = await Promise.all(markets.map(market=> searchJobs(market, role)));
 
-      const country = ["us", "de", "gb", "za"];
-      const jobs = country.map((jobCountries, index)=>{ 
-        return{ jobCountry: jobCountries, data: jobComparisons[index] };
-      })
+       
+//       // const role: string = "";
+//       // const jobs = country.map((jobCountries, index)=>{ 
+//       //   return{ jobCountry: jobCountries, data: jobComparisons[index] };
+//       // })
 
-      return (jobs);
+//       return (jobs);
     
-}
+// }
