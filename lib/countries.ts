@@ -33,3 +33,17 @@ export const findCountryByName =(input: string): SupportedCountry | undefined =>
   const country =  supportedCountries.find((i)=>(i.name.toLowerCase() === countryInput))
   return(country)
 }
+
+export const baselineCodes : string[] = ["us", "de", "gb", "za"];
+
+export const buildMarkets =(input?: string):string[]=>{
+    
+
+     if(input){
+          const arrangedCountries: string[] =  [...new Set([input, ...baselineCodes])].slice(0,4);                         
+           return(arrangedCountries)  
+     }else{
+         return baselineCodes.slice(0,4);  
+     }
+    
+}
