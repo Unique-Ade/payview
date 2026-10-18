@@ -97,17 +97,13 @@ interface CountryComparison {
   data: JobSearchResults;
 }
 //Job Comparison Function
-// export const jobRoleComparison = async(role: string, markets: string[]):Promise<CountryComparison[]>=>{
+export const jobRoleComparison = async(role: string, markets: string[]):Promise<CountryComparison[]>=>{
        
-//        const jobMarkets: string[] = ["us", "de", "gb", "za"];
-//        const jobComparisons = await Promise.all(markets.map(market=> searchJobs(market, role)));
+  const jobLists = await Promise.all(markets.map((market)=>(searchJobs(market, role))))
 
-       
-//       // const role: string = "";
-//       // const jobs = country.map((jobCountries, index)=>{ 
-//       //   return{ jobCountry: jobCountries, data: jobComparisons[index] };
-//       // })
-
-//       return (jobs);
+  const jobs = jobLists.map((result, index)=>(
+      ({jobCountry: markets[index], data: result} )
+  ))
+      return (jobs);
     
-// }
+}
