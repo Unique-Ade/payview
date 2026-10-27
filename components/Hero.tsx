@@ -1,12 +1,19 @@
 import Link from 'next/link'
 import React from 'react'
 import Salarycard from './Salarycard'
+import { CountrySalary } from '@/lib/types';
 
-const Hero = () => {
+
+interface HeroProps {
+  jobRow: CountrySalary[];
+}
+
+const Hero = ({jobRow}: HeroProps) => {
+
   return (
     <div className="flex flex-wrap gap-14 pt-[72px] px-8 pb-16">
       {/* <div className="flex-[1_1_440px] min-w-[320px] flex flex-col gap-6 justify-center"> */}
-        <div className="flex-[1_1_440px] min-w-0 sm:min-w-[320px] flex flex-col gap-6 justify-center">
+      <div className="flex-[1_1_440px] min-w-0 sm:min-w-[320px] flex flex-col gap-6 justify-center">
         <h1 className="text-[52px] leading-[1.08] font-bold tracking-[-0.015em] ">
           Know what the role is really worth, wherever you work.
         </h1>
@@ -41,7 +48,7 @@ const Hero = () => {
 
       {/* <div className="flex-[1_1_380px] min-w-[320px] flex items-center"> */}
       <div className="flex-[1_1_380px] min-w-0 sm:min-w-[320px] flex items-center">
-        <Salarycard />
+        <Salarycard jobRow={jobRow} />
       </div>
     </div>
   )

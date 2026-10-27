@@ -6,3 +6,4 @@ export interface CountrySalary {
     countryCode: string
     currency: string
 }
+
