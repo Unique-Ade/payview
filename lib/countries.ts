@@ -31,7 +31,7 @@ export const supportedCountries: SupportedCountry[] = [
 export const findCountryByName =(input: string): SupportedCountry | undefined =>{
   const countryInput = input.trim().toLowerCase() ;
   const country =  supportedCountries.find((i)=>(i.name.toLowerCase() === countryInput))
-  return(country)
+  return(country);
 }
 
 export const baselineCodes : string[] = ["us", "de", "gb", "za"];

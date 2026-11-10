@@ -22,15 +22,15 @@ const Hero = ({jobRow}: HeroProps) => {
           so you can see how a role&apos;s pay actually compares before you apply, negotiate, or relocate.
         </p>
 
-        <form className="flex flex-wrap gap-[14px] mt-2">
+        <form className="flex flex-wrap gap-[14px] mt-2" method='get' action="/">
           <div className="flex flex-col gap-1.5">
             <label htmlFor="role" className="text-[13px] font-medium text-[#5B6270]">Role</label>
-            <input type="text" id="role" placeholder="Frontend Engineer"
+            <input type="text" id="role" placeholder="Frontend Engineer" name='role'
               className="text-[15px] px-[14px] py-[11px] border border-line rounded w-[220px] bg-white text-ink" />
           </div>
           <div className="flex flex-col gap-1.5">
             <label htmlFor="market" className="text-[13px] font-medium text-[#5B6270]">Market</label>
-            <input type="text" id="market" placeholder="United States"
+            <input type="text" id="market" placeholder="United States" name='country'
               className="text-[15px] px-[14px] py-[11px] border border-line rounded w-[180px] bg-white text-ink" />
           </div>
           <div className="flex flex-col justify-end">

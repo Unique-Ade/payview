@@ -58,7 +58,6 @@ export const searchJobs = async (country:string="gb", what:string="", page:numbe
     throw new Error(`Adzuna request failed: ${response.status}`)
   }
   const data: JobSearchResults = await response.json();
-   console.log(data);
   return(data);
  
 }
@@ -85,7 +84,6 @@ export const getSalaryHistogram = async(country: string = "gb", what: string = "
      throw new Error(`Adzuna request failed: ${response.status}`)
    }
   const  data : SalaryHistogram= await response.json();
-  console.log(data)
   return(data)
 }
 
