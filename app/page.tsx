@@ -39,7 +39,7 @@ const Home = async ({ searchParams }: PageProps) => {
   });
   return (
     <div className="home">
-      <Hero jobRow={jobRow} />
+      <Hero jobRow={jobRow} role={role}/>
     </div>
   )
 }

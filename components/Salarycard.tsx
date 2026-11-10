@@ -2,6 +2,7 @@ import { CountrySalary } from "@/lib/types";
 
 interface SalaryProps {
   jobRow: CountrySalary[];
+  role: string;
 }
 
 const formatSalary = (amount: number, currency: string): string => {
@@ -14,11 +15,11 @@ const formatSalary = (amount: number, currency: string): string => {
   return currencyFormat.format(amount);
 };
 
-const Salarycard = ({ jobRow }: SalaryProps) => {
+const Salarycard = ({ jobRow, role }: SalaryProps) => {
   return (
     <div className="w-full bg-ink rounded-md p-7 flex flex-col gap-[18px]">
       <div>
-        <h2 className="text-[15px] font-semibold text-paper">Frontend Engineer</h2>
+        <h2 className="text-[15px] font-semibold text-paper">{role}</h2>
         <p className="text-[13px] text-[#8992A3] mt-0.5">Average annual pay, by market</p>
       </div>
 

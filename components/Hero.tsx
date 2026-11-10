@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import React from 'react'
 import Salarycard from './Salarycard'
 import { CountrySalary } from '@/lib/types';
 
 
 interface HeroProps {
   jobRow: CountrySalary[];
+  role: string;
 }
 
-const Hero = ({jobRow}: HeroProps) => {
+const Hero = ({jobRow, role}: HeroProps) => {
 
   return (
     <div className="flex flex-wrap gap-14 pt-[72px] px-8 pb-16">
@@ -48,7 +48,7 @@ const Hero = ({jobRow}: HeroProps) => {
 
       {/* <div className="flex-[1_1_380px] min-w-[320px] flex items-center"> */}
       <div className="flex-[1_1_380px] min-w-0 sm:min-w-[320px] flex items-center">
-        <Salarycard jobRow={jobRow} />
+        <Salarycard jobRow={jobRow} role={role}/>
       </div>
     </div>
   )
