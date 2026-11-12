@@ -18,7 +18,17 @@ const formatSalary = (amount: number, currency: string): string => {
 };
 
 const Salarycard = ({ jobRow, role }: SalaryProps) => {
-  
+  const hasNoData = jobRow.every((row) => (
+    row.salary === null
+  ));
+  if (hasNoData) {
+    return (
+      <div className="w-full bg-ink rounded-md p-7 flex flex-col gap-[18px]">
+        <h2 className="text-[15px] font-semibold text-paper">No salary data found for <span className="text-red-700">{role}</span></h2>
+        <p className="text-[13px] text-[#8992A3] mt-0.5">Hint: Try a different role title.</p>
+      </div>
+    );
+  }
   return (
     <div className="w-full bg-ink rounded-md p-7 flex flex-col gap-[18px]">
       <div>
@@ -28,6 +38,7 @@ const Salarycard = ({ jobRow, role }: SalaryProps) => {
 
       <div className="flex flex-col border-b border-[#2A3140]">
         {jobRow.map((country) => (
+
           <div
             key={country.countryCode}
             className="flex items-center justify-between py-[13px] border-t border-[#2A3140]"
@@ -41,11 +52,11 @@ const Salarycard = ({ jobRow, role }: SalaryProps) => {
             <span className="font-mono text-[15px] text-paper">
               {typeof country.salary === "number" ? formatSalary(country.salary, country.currency) : "No Data"}
             </span>
-            
+
           </div>
         ))}
       </div>
-      
+
       <p className="text-xs text-[#8992A3]">Source: Adzuna, updated daily</p>
     </div>
   );
