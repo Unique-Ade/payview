@@ -28,9 +28,10 @@ const Home = async ({ searchParams }: PageProps) => {
     if (!country) {
       throw new Error(`Unsupported country code: ${row.jobCountry}`);
     }
+    const salary = row.data.mean !== null && row.data.mean !== undefined && row.data.count>0 ? row.data.mean : null;
     return {
       countryName: country.name,
-      salary: row.data.mean,
+      salary,
       countryCode: row.jobCountry,
       currency: country.currency
     }
@@ -39,7 +40,7 @@ const Home = async ({ searchParams }: PageProps) => {
   });
   return (
     <div className="home">
-      <Hero jobRow={jobRow} role={role}/>
+      <Hero jobRow={jobRow} role={role} />
     </div>
   )
 }

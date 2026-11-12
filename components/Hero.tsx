@@ -46,7 +46,6 @@ const Hero = ({jobRow, role}: HeroProps) => {
         </Link>
       </div>
 
-      {/* <div className="flex-[1_1_380px] min-w-[320px] flex items-center"> */}
       <div className="flex-[1_1_380px] min-w-0 sm:min-w-[320px] flex items-center">
         <Salarycard jobRow={jobRow} role={role}/>
       </div>

@@ -39,7 +39,7 @@ export interface Job {
 
 export interface JobSearchResults {
   count: number;
-  mean: number;
+  mean?: number ;
   results: Job[];
 }
 
@@ -59,7 +59,6 @@ export const searchJobs = async (country:string="gb", what:string="", page:numbe
   }
   const data: JobSearchResults = await response.json();
   return(data);
- 
 }
 
 // Job Histogram Interfaces
@@ -94,6 +93,7 @@ interface CountryComparison {
   jobCountry : string;
   data: JobSearchResults;
 }
+
 //Job Comparison Function
 export const jobRoleComparison = async(role: string, markets: string[]):Promise<CountryComparison[]>=>{
        
@@ -103,5 +103,5 @@ export const jobRoleComparison = async(role: string, markets: string[]):Promise<
       ({jobCountry: markets[index], data: result} )
   ))
       return (jobs);
-    
+    console.log(jobs);
 }

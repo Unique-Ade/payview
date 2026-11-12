@@ -5,6 +5,8 @@ interface SalaryProps {
   role: string;
 }
 
+
+
 const formatSalary = (amount: number, currency: string): string => {
   const currencyFormat = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -16,6 +18,7 @@ const formatSalary = (amount: number, currency: string): string => {
 };
 
 const Salarycard = ({ jobRow, role }: SalaryProps) => {
+  
   return (
     <div className="w-full bg-ink rounded-md p-7 flex flex-col gap-[18px]">
       <div>
@@ -36,12 +39,13 @@ const Salarycard = ({ jobRow, role }: SalaryProps) => {
               <span className="text-sm text-paper">{country.countryName}</span>
             </div>
             <span className="font-mono text-[15px] text-paper">
-              {formatSalary(country.salary, country.currency)}
+              {typeof country.salary === "number" ? formatSalary(country.salary, country.currency) : "No Data"}
             </span>
+            
           </div>
         ))}
       </div>
-
+      
       <p className="text-xs text-[#8992A3]">Source: Adzuna, updated daily</p>
     </div>
   );
