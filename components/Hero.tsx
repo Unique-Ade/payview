@@ -1,14 +1,17 @@
 import Link from 'next/link'
 import Salarycard from './Salarycard'
 import { CountrySalary } from '@/lib/types';
+import { supportedCountries } from '@/lib/countries';
 
 
 interface HeroProps {
   jobRow: CountrySalary[];
   role: string;
+  unsupportedCountryName?: string;
+
 }
 
-const Hero = ({jobRow, role}: HeroProps) => {
+const Hero = ({jobRow, role, unsupportedCountryName}: HeroProps) => {
 
   return (
     <div className="flex flex-wrap gap-14 pt-[72px] px-8 pb-16">
@@ -18,7 +21,7 @@ const Hero = ({jobRow, role}: HeroProps) => {
           Know what the role is really worth, wherever you work.
         </h1>
         <p className="text-[17px] leading-[1.65] text-[#5B6270] max-w-[46ch]">
-          PayView pulls live job-market data from Adzuna across 14 countries,
+          PayView pulls live job-market data from Adzuna across {supportedCountries.length} countries,
           so you can see how a role&apos;s pay actually compares before you apply, negotiate, or relocate.
         </p>
 
@@ -47,7 +50,7 @@ const Hero = ({jobRow, role}: HeroProps) => {
       </div>
 
       <div className="flex-[1_1_380px] min-w-0 sm:min-w-[320px] flex items-center">
-        <Salarycard jobRow={jobRow} role={role}/>
+        <Salarycard jobRow={jobRow} role={role} unsupportedCountryName={unsupportedCountryName} />
       </div>
     </div>
   )

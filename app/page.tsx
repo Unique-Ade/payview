@@ -17,6 +17,10 @@ const Home = async ({ searchParams }: PageProps) => {
   const userInput = await searchParams;
   const role = userInput.role || "Frontend Developer";
   const matchedCountry = userInput.country ? findCountryByName(userInput.country) : undefined;
+  const isUnsupportedCountry = Boolean(!matchedCountry && userInput.country);
+  const unsupportedCountryName = isUnsupportedCountry ? userInput.country : undefined;
+
+
   const countryCode = matchedCountry?.code;
 
   const countryCodes = buildMarkets(countryCode);
@@ -40,7 +44,7 @@ const Home = async ({ searchParams }: PageProps) => {
   });
   return (
     <div className="home">
-      <Hero jobRow={jobRow} role={role} />
+      <Hero jobRow={jobRow} role={role} unsupportedCountryName={unsupportedCountryName} />
     </div>
   )
 }

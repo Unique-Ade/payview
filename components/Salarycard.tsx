@@ -1,13 +1,15 @@
-import { CountrySalary } from "@/lib/types";
+import { CountrySalary,  } from "@/lib/types";
+import { supportedCountries } from "@/lib/countries";
 
 interface SalaryProps {
   jobRow: CountrySalary[];
   role: string;
+  unsupportedCountryName?: string;
 }
 
 
 
-const formatSalary = (amount: number, currency: string): string => {
+const formatSalary = (amount: number, currency: string, ): string => {
   const currencyFormat = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: currency,
@@ -17,17 +19,27 @@ const formatSalary = (amount: number, currency: string): string => {
   return currencyFormat.format(amount);
 };
 
-const Salarycard = ({ jobRow, role }: SalaryProps) => {
+const Salarycard = ({ jobRow, role, unsupportedCountryName}: SalaryProps) => {
   const hasNoData = jobRow.every((row) => (
     row.salary === null
   ));
   if (hasNoData) {
     return (
       <div className="w-full bg-ink rounded-md p-7 flex flex-col gap-[18px]">
-        <h2 className="text-[15px] font-semibold text-paper">No salary data found for <span className="text-red-700">{role}</span></h2>
+        <h2 className="text-[15px] font-semibold text-paper">No salary data found for <span className="text-red-400">{role}</span></h2>
         <p className="text-[13px] text-[#8992A3] mt-0.5">Hint: Try a different role title.</p>
       </div>
     );
+  }
+  if(unsupportedCountryName){
+    return(
+       <div className="w-full bg-ink rounded-md p-7 flex flex-col gap-[18px]">
+        <h2 className="text-[15px] font-semibold text-paper">No salary data for <span className="text-red-400">{unsupportedCountryName}</span></h2>
+        <p className="text-[13px] text-[#8992A3] mt-0.5">Hint: Try a Supported Country</p>
+        <p className="text-[13px] text-[#8992A3] mt-0.5">List of Supported Countries: {supportedCountries.map(i=>i.name).join(", ")} </p>
+
+      </div>
+    )
   }
   return (
     <div className="w-full bg-ink rounded-md p-7 flex flex-col gap-[18px]">
