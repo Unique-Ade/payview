@@ -6,9 +6,9 @@ Compare what a tech role pays across countries, using live job-market data from 
 
 ## Screenshots
 
-![PayView Dashboard](screenshots/payview-image-1.png)
+![PayView Dashboard](screenshots/payview-image-1.PNG)
 
-![Salary Comparison](screenshots/payview-image-2.png)
+![Salary Comparison](screenshots/payview-image-2.PNG)
 
 ## What it does
 
