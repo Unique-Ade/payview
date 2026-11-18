@@ -1,5 +1,6 @@
 
 import Hero from "@/components/Hero";
+import Markets from "@/components/Markets";
 import { jobRoleComparison } from "@/lib/adzuna";
 import { buildMarkets, findCountryByName, supportedCountries } from "@/lib/countries";
 import { CountrySalary } from "@/lib/types";
@@ -32,12 +33,14 @@ const Home = async ({ searchParams }: PageProps) => {
     if (!country) {
       throw new Error(`Unsupported country code: ${row.jobCountry}`);
     }
-    const salary = row.data.mean !== null && row.data.mean !== undefined && row.data.count>0 ? row.data.mean : null;
+    const {mean, count} = row.data; 
+    const salary = mean !== null && mean !== undefined && count>0 ? mean : null;
     return {
       countryName: country.name,
       salary,
       countryCode: row.jobCountry,
-      currency: country.currency
+      currency: country.currency,
+      listingCount: count,
     }
 
 
@@ -45,6 +48,7 @@ const Home = async ({ searchParams }: PageProps) => {
   return (
     <div className="home">
       <Hero jobRow={jobRow} role={role} unsupportedCountryName={unsupportedCountryName} />
+      <Markets jobRow={jobRow} role={role}/>
     </div>
   )
 }

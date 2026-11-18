@@ -3,7 +3,8 @@ import { SupportedCountry } from "./countries";
 export interface CountrySalary {
     countryName: string;
     salary:  number | null;
-    countryCode: string
-    currency: string
+    countryCode: string;
+    currency: string;
+    listingCount: number;
 }
 
