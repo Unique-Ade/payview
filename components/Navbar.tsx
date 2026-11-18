@@ -6,9 +6,9 @@ const Navbar = () => {
         <nav className="flex flex-wrap items-center justify-between border-b border-line py-[22px] px-8">
             <Link href="" className="logo font-bold text-xl pb-4 sm:pb-0">PayView</Link>
             <div className="flex items-center gap-4 flex-wrap">
-                <Link href="" className="compare-link">Compare</Link>
-                <Link href="" className="market-link">Markets</Link>
-                <Link href="" className="method-link">Methodology</Link>
+                <Link href="#search" className="compare-link">Compare</Link>
+                <Link href="#table" className="market-link">Markets</Link>
+                <Link href="#how" className="method-link">Methodology</Link>
                 {/* <Link href="" className="sign-in-link border border-line rounded px-4 py-2">Sign in</Link> */}
             </div>
         </nav>

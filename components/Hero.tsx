@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Salarycard from './Salarycard'
 import { CountrySalary } from '@/lib/types';
 import { supportedCountries } from '@/lib/countries';
+import Form from "next/form";
 
 
 interface HeroProps {
@@ -25,7 +26,7 @@ const Hero = ({jobRow, role, unsupportedCountryName}: HeroProps) => {
           so you can see how a role&apos;s pay actually compares before you apply, negotiate, or relocate.
         </p>
 
-        <form className="flex flex-wrap gap-[14px] mt-2" method='get' action="/">
+        <Form className="flex flex-wrap gap-[14px] mt-2"  action="/" id='search'>
           <div className="flex flex-col gap-1.5">
             <label htmlFor="role" className="text-[13px] font-medium text-[#5B6270]">Role</label>
             <input type="text" id="role" placeholder="Frontend Engineer" name='role'
@@ -42,10 +43,10 @@ const Hero = ({jobRow, role, unsupportedCountryName}: HeroProps) => {
               Compare salaries
             </button>
           </div>
-        </form>
+        </Form>
 
         <Link href="#table" className="text-sm font-medium border-b border-ink w-fit pb-0.5">
-          See sample data
+          See the comparison
         </Link>
       </div>
 
