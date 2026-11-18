@@ -4,7 +4,7 @@ Compare what a tech role pays across countries, using live job-market data from 
 
 **Live demo:** https://payview-app.vercel.app/
 
-(Payview%20Image.PNG)
+(Payview_Image.PNG)
 
 ## What it does
 
