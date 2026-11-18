@@ -9,7 +9,7 @@ const Navbar = () => {
                 <Link href="" className="compare-link">Compare</Link>
                 <Link href="" className="market-link">Markets</Link>
                 <Link href="" className="method-link">Methodology</Link>
-                <Link href="" className="sign-in-link border border-line rounded px-4 py-2">Sign in</Link>
+                {/* <Link href="" className="sign-in-link border border-line rounded px-4 py-2">Sign in</Link> */}
             </div>
         </nav>
     )

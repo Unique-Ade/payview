@@ -1,6 +1,9 @@
 
+import CtaBand from "@/components/CtaBand";
 import Hero from "@/components/Hero";
+import HowItWorks from "@/components/HowItWorks";
 import Markets from "@/components/Markets";
+import Stats from "@/components/Stats";
 import { jobRoleComparison } from "@/lib/adzuna";
 import { buildMarkets, findCountryByName, supportedCountries } from "@/lib/countries";
 import { CountrySalary } from "@/lib/types";
@@ -49,6 +52,9 @@ const Home = async ({ searchParams }: PageProps) => {
     <div className="home">
       <Hero jobRow={jobRow} role={role} unsupportedCountryName={unsupportedCountryName} />
       <Markets jobRow={jobRow} role={role}/>
+      <Stats/>
+      <CtaBand/>
+      <HowItWorks/>
     </div>
   )
 }
