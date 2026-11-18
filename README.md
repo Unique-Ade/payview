@@ -2,7 +2,7 @@
 
 Compare what a tech role pays across countries, using live job-market data from the [Adzuna API](https://developer.adzuna.com/).
 
-**Live demo:** [YOUR VERCEL URL]
+**Live demo:** [https://payview-app.vercel.app/]
 
 ![PayView screenshot](docs/screenshot.png)
 
